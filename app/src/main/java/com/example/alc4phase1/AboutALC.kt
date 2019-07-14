@@ -1,32 +1,36 @@
 package com.example.alc4phase1
 
+import android.net.Uri
 import android.os.Bundle
-import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_about_alc.*
+import androidx.browser.customtabs.CustomTabsIntent
 
 class AboutALC : AppCompatActivity() {
 
+    private var customTabHelper: CustomTabHelper = CustomTabHelper()
+
+    companion object {
+        private const val URL = "https://andela.com/alc/"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Navigation support for action bar
-        val actionbar = supportActionBar
-        actionbar?.setDisplayHomeAsUpEnabled(true)
-
-        // Sets content view
         setContentView(R.layout.activity_about_alc)
 
-        // Prevents redirect
-        webview.webViewClient = WebViewClient()
+        /** Google custom tabs **/
+        val builder = CustomTabsIntent.Builder()
 
-        webview.settings.domStorageEnabled = true
-        webview.settings.useWideViewPort = true
-        webview.settings.loadWithOverviewMode = true
+        // Shows website title
+        builder.setShowTitle(true)
 
-        // Loads the URL
-        webview.loadUrl("https://www.andela.com/alc/")
+        val customTabsIntent = builder.build()
 
+        // Checks if Chrome is available
+        val packageName = customTabHelper.getPackageNameToUse(this, "https://andela.com/alc/")
+
+        customTabsIntent.intent.setPackage(packageName)
+
+        customTabsIntent.launchUrl(this, Uri.parse(URL))
     }
 
     // Controls navigation button behaviour
@@ -35,3 +39,17 @@ class AboutALC : AppCompatActivity() {
         return true
     }
 }
+
+//        // Navigation support for action bar
+//        val actionbar = supportActionBar
+//        actionbar?.setDisplayHomeAsUpEnabled(true)
+//
+//        // Sets content view
+//        setContentView(R.layout.activity_about_alc)
+//
+//        // Prevents redirect
+//        webview.webViewClient = WebViewClient()
+//
+//        // Loads the URL
+//        webview.loadUrl("https://www.andela.com/alc/")
+
