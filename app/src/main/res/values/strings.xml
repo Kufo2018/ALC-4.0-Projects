@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ALC 4 PHASE 1</string>
+    <string name="about_alc">about alc</string>
+    <string name="my_profile">my profile</string>
+    <string name="slack_username">#64David Ibukun Kuforiji</string>
+    <string name="phone_number">+2347039895841</string>
+    <string name="email">ibukunolwalewa@gmail.com</string>
+    <string name="country_name">Nigeria</string>
+    <string name="track">Android</string>
+    <string name="my_name">David Ibukun Kuforiji</string>
+</resources>
