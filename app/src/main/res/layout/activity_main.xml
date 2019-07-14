@@ -13,7 +13,7 @@
 
                 android:textSize="36sp"
                 android:fontFamily="@font/nunito_bold"
-                android:text="Welcome to ALC 4.0"
+                android:text="@string/welcome_to_alc_4_0"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
         <Button
                 android:fontFamily="@font/nunito_bold"
                 android:padding="8dp"
-                android:background="@color/buttonColor"
+                android:background="@drawable/rectangle"
                 android:textAllCaps="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,10 +37,10 @@
                 android:id="@+id/my_profile"
                 android:fontFamily="@font/nunito_bold"
                 android:padding="8dp"
-                android:background="@color/buttonColor"
+                android:background="@drawable/rectangle"
                 android:textAllCaps="true"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 app:layout_constraintTop_toBottomOf="@+id/about_alc" app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp"/>

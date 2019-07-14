@@ -13,6 +13,11 @@ class MyProfile : AppCompatActivity() {
         // Instantiates data binding
         val dataBinding: ActivityMyProfileBinding = DataBindingUtil.setContentView(this, R.layout.activity_my_profile)
 
+        // Navigation support for action bar
+        val actionbar = supportActionBar
+        actionbar?.setDisplayHomeAsUpEnabled(true)
+        actionbar?.setDisplayHomeAsUpEnabled(true)
+
         // Sets the text for respective views
         dataBinding.myName.text = getString(R.string.my_name)
         dataBinding.track.text = getString(R.string.track)
@@ -21,6 +26,11 @@ class MyProfile : AppCompatActivity() {
         dataBinding.phoneNumber.text = getString(R.string.phone_number)
         dataBinding.slackUsername.text = getString(R.string.slack_username)
 
+    }
 
+    // Controls navigation button behaviour
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

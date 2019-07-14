@@ -15,12 +15,15 @@
                 android:src="@drawable/kufo"
                 android:layout_width="251dp"
                 android:layout_height="211dp"
-                android:id="@+id/imageView" android:layout_marginTop="8dp"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/imageView"
+                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp" tools:ignore="ContentDescription"
+                app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
+                android:fontFamily="@font/nunito_bold"
+                android:textSize="20sp"
                 android:layout_margin="8dp"
                 android:id="@+id/my_name"
                 android:layout_width="wrap_content"
@@ -29,12 +32,11 @@
                 android:layout_marginStart="8dp"/>
 
         <View
+                android:background="@color/textColor"
                 android:layout_margin="8dp"
                 android:id="@+id/divider"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:textColor="@color/textColor"
-                android:visibility="visible"
                 app:layout_constraintTop_toBottomOf="@+id/my_name"
                 android:layout_marginStart="8dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -44,43 +46,43 @@
         <TextView
                 android:layout_margin="16dp"
                 android:textSize="20sp"
-                android:text="Track:"
+                android:text="@string/qtrack"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:id="@+id/qname"
-                app:layout_constraintBaseline_toBaselineOf="@+id/track" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"/>
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp" app:layout_constraintBaseline_toBaselineOf="@+id/track"/>
 
         <TextView
                 android:textSize="20sp"
-                android:text="Country:"
+                android:text="@string/qcountry"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="@+id/qname"
                 android:id="@+id/qcountry"
-                app:layout_constraintBaseline_toBaselineOf="@+id/slack_username"/>
+                app:layout_constraintBaseline_toBaselineOf="@+id/country"/>
 
         <TextView
                 android:textSize="20sp"
-                android:text="Email:"
+                android:text="@string/qemail"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="@+id/qcountry"
                 android:id="@+id/qemail"
-                app:layout_constraintBaseline_toBaselineOf="@+id/phone_number"/>
+                app:layout_constraintBaseline_toBaselineOf="@+id/email"/>
 
         <TextView
                 android:textSize="20sp"
-                android:text="Phone Number:"
+                android:text="@string/qphone_number"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="@+id/qemail"
                 android:id="@+id/qphone_number"
-                app:layout_constraintBaseline_toBaselineOf="@+id/email"/>
+                app:layout_constraintBaseline_toBaselineOf="@+id/phone_number"/>
 
         <TextView
                 android:id="@+id/qslack_username"
                 android:textSize="20sp"
-                android:text="Slack Username:"
+                android:text="@string/qslack_username"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="@+id/qphone_number"
-                app:layout_constraintBaseline_toBaselineOf="@+id/country"/>
+                app:layout_constraintBaseline_toBaselineOf="@+id/slack_username"/>
 
         <TextView
                 android:layout_marginTop="16dp"
@@ -94,13 +96,21 @@
                 android:textSize="20sp"
                 android:id="@+id/country"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@+id/qslack_username"
+                app:layout_constraintStart_toEndOf="@+id/qcountry"
                 android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/qphone_number"/>
+                app:layout_constraintTop_toBottomOf="@+id/qname"/>
 
         <TextView
                 android:textSize="20sp"
                 android:id="@+id/email"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/qemail"
+                android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/qcountry"/>
+
+        <TextView
+                android:textSize="20sp"
+                android:id="@+id/phone_number"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@+id/qphone_number"
                 android:layout_marginStart="8dp" android:layout_marginTop="8dp"
@@ -108,17 +118,11 @@
 
         <TextView
                 android:textSize="20sp"
-                android:id="@+id/phone_number"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@+id/qemail" android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/qcountry"/>
-
-        <TextView
-                android:textSize="20sp"
                 android:id="@+id/slack_username"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@+id/qcountry" android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/qname"/>
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/qphone_number"
+                app:layout_constraintStart_toEndOf="@+id/qslack_username" android:layout_marginStart="8dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

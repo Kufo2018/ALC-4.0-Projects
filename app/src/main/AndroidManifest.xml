@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.alc4phase1">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/alc_4_logo"
@@ -9,9 +11,16 @@
             android:roundIcon="@mipmap/alc_4_logo"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".AboutALC">
+        <activity android:name=".AboutAlcJava"
+                  android:label="@string/about_alc_page">
         </activity>
-        <activity android:name=".MyProfile">
+        <activity
+                android:name=".AboutALC"
+        >
+        </activity>
+        <activity
+                android:name=".MyProfile"
+                android:label="@string/my_profile_page">
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>

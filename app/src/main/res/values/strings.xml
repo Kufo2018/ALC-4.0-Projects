@@ -1,11 +1,19 @@
 <resources>
     <string name="app_name">ALC 4 PHASE 1</string>
+    <string name="my_profile_page">My Profile</string>
+    <string name="about_alc_page">About ALC</string>
     <string name="about_alc">about alc</string>
     <string name="my_profile">my profile</string>
-    <string name="slack_username">#64David Ibukun Kuforiji</string>
+    <string name="slack_username">David Ibukun Kuforiji</string>
     <string name="phone_number">+2347039895841</string>
     <string name="email">ibukunolwalewa@gmail.com</string>
     <string name="country_name">Nigeria</string>
     <string name="track">Android</string>
     <string name="my_name">David Ibukun Kuforiji</string>
+    <string name="qslack_username">Slack Username:</string>
+    <string name="qphone_number">Phone Number:</string>
+    <string name="qtrack">Track:</string>
+    <string name="qemail">Email:</string>
+    <string name="qcountry">Country:</string>
+    <string name="welcome_to_alc_4_0">Welcome to ALC 4.0</string>
 </resources>
