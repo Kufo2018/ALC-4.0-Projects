@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         // Navigates to the MyProfile activity
         dataBinding.aboutAlc.setOnClickListener {
-            val intent = Intent(this, AboutALC::class.java)
+            val intent = Intent(this, AboutALCJava::class.java)
             startActivity(intent)
         }
     }
