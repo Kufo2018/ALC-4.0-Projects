@@ -7,13 +7,11 @@ import android.webkit.SslErrorHandler;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AboutALCJava extends AppCompatActivity {
 
-    /**
-     * Webview client adapted from Regnex(https://gist.github.com/RegNex)
-     */
     WebView webView;
     String url = "https://andela.com/alc";
 
@@ -22,6 +20,16 @@ public class AboutALCJava extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_alcjava);
+
+        // Gets a support ActionBar corresponding to the action bar
+        ActionBar ab = getSupportActionBar();
+
+        // Enables the up navigation button
+        if (ab != null) {
+            ab.setDisplayHomeAsUpEnabled(true);
+        }
+
+        // Handles logic for loading URL in WebView correctly
         webView = findViewById(R.id.webview);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -29,12 +37,21 @@ public class AboutALCJava extends AppCompatActivity {
         webView.loadUrl(url);
     }
 
-    // Custom webview client
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+    /**
+     * Custom Webview client adapted from
+     * Regnex(https://gist.github.com/RegNex)
+     */
     private class MyClientWebView extends WebViewClient {
         @Override
         public void onReceivedSslError(WebView view, final SslErrorHandler handler, SslError error) {
 
-            // Handler proceeds despite SSL cert error
+            // Handler proceeds despite SSL certficate error
             handler.proceed();
         }
     }
